@@ -1,0 +1,251 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-color:#FAFAFA ;
+}
+.main{
+	
+	width: 95%;
+	height: 500px;
+	/*background: yellow;*/
+	margin: auto;
+	margin-top: 20px;
+}
+/*list*/
+.left{
+	width: 20%;
+	height: 500px;
+	/*background: black;*/
+	float: left;
+	border: 1px solid rgb(255,227,215);
+
+}
+.hot-list{
+	width: 200px;
+	height: 120px;
+}
+.hot-list-one ,.hot-list-two, .hot-list-three{
+	width: 150px;
+	height: 40px;
+	margin-left: 20px;
+	margin-bottom: 5px;
+}
+.hot-list-left img{
+	width: 30px;
+	height: 30px;
+}
+.hot-list-left a{
+	color: black;
+	font-family:"宋体";
+}
+
+.hot-list-left a:hover{
+	color: orange;
+	cursor: pointer;
+	text-decoration: none;
+	
+}
+
+hr{
+	color: rgb(255,227,215);
+}
+.left-main{
+	/*margin-left: 35px;*/
+}
+.m-top-1 h3{
+	margin-left: 20px;
+}
+.m-top-1 button{
+	margin-bottom: 10px;
+}
+.hot ul{
+	list-style-type: none;
+	line-height: 40px;
+}
+.classify ul{
+	list-style-type: none;
+	line-height: 40px;
+}
+.m-top{
+	width: 78%;
+	height: 90px;
+	background: rgb(230,251,254);
+	float: right;
+	
+}
+.m-line{
+	width: 78%;
+
+	float: right;
+	
+}
+.m-center{
+	width: 78%;
+	height: 369px;
+	/*background: red;*/
+	float: right;
+}
+/* singer*/
+.s-right{
+	width: 78%;
+	height: 500px;
+}
+.s-top{
+	width: 78%;
+	height: 50px;
+	
+	float: right;
+}
+.s-b{
+	width: 82px;
+	float: left;
+	margin: 5px -12px 0 0;
+}
+.s-top ul{
+	list-style-type: none;
+	line-height: 40px;
+}
+.s-list{
+	float: left;
+}
+.s-top ul li{
+	
+	float: left;
+	font-size: 30px;
+	padding: 2px 3px;
+	/*color: white;*/
+}
+.s-list a:hover{
+	color: orange;
+	cursor: pointer;
+	text-decoration: none;
+	
+}
+.s-img{
+	width: 78%;
+	height: 450px;
+	/*background: blue;*/
+	float: right;
+}
+.s-img-a {
+	width: 150px;
+	height: 170px;
+	float: left;
+	margin: 20px 35px 35px 10px;
+	
+}
+.s-img-a h4{
+	height: 20px;
+	margin: auto;
+	/*margin-left: 50px;*/
+	margin-top: 15px;
+}
+.s-img-a img{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+}
+
+/*mv*/
+.s-mv-b ul{
+	list-style-type: none;
+	line-height: 40px;
+}
+
+
+
+.right-mv-title {
+	width: 100px;
+	height: 40px;
+	margin-left: 80px;
+	
+}
+.s-mv-top{
+	width: 95%;
+	height: 160px;
+	background-color: white;
+	/*background-color: ghostwhite;*/
+	margin: auto;
+	
+}
+.s-mv-b{
+	width: 95%;
+	float: left;
+	margin: 5px -12px 0 30px;
+}
+
+.s-mv-top ul li{
+	
+	float: left;
+	font-size: 20px;
+	padding: 2px 15px;
+	/*color: white;*/
+}
+
+.s-mv{
+	width: 95%;
+	height: 450px;
+	/*background: blue;*/
+	margin: auto;
+	
+}
+.s-mv-a {
+	width: 250px;
+	/*height: 210px;*/
+	height: 205px;
+	float: left;
+	margin: 15px 10px 15px 10px;
+	overflow: hidden;/*超出盒子的元素自动隐藏*/
+	
+}
+/*.s-mv-a h6{
+	height: 20px;
+	margin: auto;
+	margin: 10px 0px 5px 10px;
+	
+}*/
+.s-mv-a img{
+	width: 250px;
+	height: 150px;
+	border-radius: 3%;
+	
+}
+
+ .over{
+	width: 250px;
+	height: 150px;
+	background-color: rgba(150,150,150,0.2);
+	position: relative;
+	/*background-color: red;*/
+	/*opacity: 0.6;透明度  会使内容一起变透明*/
+	overflow: hidden;/*解决父子边框粘合在一起的BUG*/
+	/*top: -205px;*/
+	
+	
+	}
+
+.s-mv-a:hover .over{
+	top: -205px;
+}
+
+.s-mv-a .over .play{
+	width: 70px;
+	height: 70px;
+	border: 5px solid #969696;
+	border-radius: 50%;
+	margin: 40px auto;
+}
+ .over .play:hover{
+	border: 5px solid white;
+}
+.over .play .sj{
+	width: 0px;
+	height: 0px;
+	margin: 10px auto;
+	border-top:20px solid transparent ;
+	border-right:0px solid transparent ;
+	border-bottom:20px solid transparent ;
+	border-left:20px solid white ;
+}

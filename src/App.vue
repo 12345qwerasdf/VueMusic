@@ -62,31 +62,31 @@
 			<div class="col-md-12 column">
 				<nav class="navbar navbar-default navbar-inverse" role="navigation">
 					<div class="navbar-header">
-						 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#"><img src="../build/logo.png" style="background:cover;width: 60px;height: 40px;vertical-align: middle;"/></a>
+						 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#"><img src="../build/logo.png" style="background:cover;width: 60px;height: 40px;vertical-align: middle; margin-top: -7px;"/></a>
 					</div>
 					
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
 							<li class="active" style="margin-right: 20px;">
-								 <a href="#">首页</a>
+								 <a href="/index">首页</a>
 							</li>
 							<li style="margin-right: 20px;">
-								 <a href="#">榜单</a>
+								 <a href="/list">榜单</a>
 							</li>
 							<li style="margin-right: 20px;">
-								 <a href="#">歌手</a>
+								 <a href="/singer">歌手</a>
 							</li>
-							<li style="margin-right: 20px;">
+							<!--<li style="margin-right: 20px;">
 								 <a href="#">标签</a>
 							</li>
 							<li style="margin-right: 20px;">
 								 <a href="#">歌单</a>
-							</li>
+							</li>-->
 							<li style="margin-right: 20px;">
 								 <a href="#">专辑</a>
 							</li>
 							<li style="margin-right: 20px;">
-								 <a href="#">MV</a>
+								 <a href="/mv">MV</a>
 							</li>
 							<!--<li class="dropdown">
 								 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
@@ -148,6 +148,7 @@
 				</nav>
 			</div>
 		</div>
+		<router-view/>
 	</div>
   
   
