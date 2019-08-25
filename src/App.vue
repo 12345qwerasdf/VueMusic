@@ -17,7 +17,7 @@
 								 <a href="#">榜单</a>
 							</li>
 							<li style="margin-right: 20px;">
-								 <router-link to='/' >歌手</router-link>
+								 <router-link to='/singerlist' >歌手</router-link>
 							</li>
 							<li style="margin-right: 20px;">
 								 <a href="#">标签</a>
