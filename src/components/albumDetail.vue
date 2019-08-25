@@ -111,4 +111,10 @@ export default {
   }
 }
 </script>
+
+<style>
+	/*@import url("../../static/css/hjrstyle.css");
+	@import url("../../static/css/bootstrap.min.css");
+	@import url("../../static/css/header.css");*/
+	
 </style>

@@ -128,4 +128,6 @@ export default {
 </script>
 
 <style>
+	@import url("../../static/css/hjrstyle.css");
+	
 </style>

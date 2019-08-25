@@ -78,8 +78,8 @@ export default {
 }
 </script>
 
-<style>
-	.carousel-control.left {
+<style scoped>
+	/*.carousel-control.left {
     background-image:none;
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1)
@@ -90,5 +90,8 @@ export default {
     background-image:none;
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1)
-}
+}*/
 </style>
+<style >
+	@import url("../../static/css/hjrstyle.css");
+	</style>
