@@ -224,4 +224,8 @@ th{
 body{
 	background-color:#FAFAFA
 }
+
+</style>
+<style type="text/css">
+	@import url("../../static/css/ltxstyle.css");
 </style>
