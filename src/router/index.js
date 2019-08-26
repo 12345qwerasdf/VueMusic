@@ -1,7 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import singer from '@/components/singer'
+import singerlist from '@/components/singerlist'
+import singerDetail from '@/components/singerDetail'
+import singerAlbum from '@/components/singerAlbum'
+import albumDetail from '@/components/albumDetail'
+import allAlbum from '@/components/allAlbum'
+
 import list from '@/components/list'
 import index from '@/components/index'
 import mv from '@/components/mv'
@@ -14,19 +19,39 @@ import danmu from '@/components/danmu'
 Vue.use(Router)
 
 export default new Router({
-	mode:'history',
+  mode:'history',
   routes: [
     {
+<<<<<<< HEAD
       path: '/',
       name: 'index',
       component: index
+=======
+      path: '/singerlist',
+      name: 'singerlist',
+      component: singerlist
+>>>>>>> 5504df7c010218784ae82701d223c297c7f17887
     },
     {
-      path: '/singer',
-      name: 'singer',
-      component: singer
-    }
-    ,
+      path: '/singerDetail',
+      name: 'singerDetail',
+      component: singerDetail
+    },
+    {
+      path: '/singerAlbum',
+      name: 'singerAlbum',
+      component: singerAlbum
+    },
+    {
+      path: '/albumDetail',
+      name: 'albumDetail',
+      component: albumDetail
+    },
+    {
+      path: '/allAlbum',
+      name: 'allAlbum',
+      component: allAlbum
+		},
     {
       path: '/list',
       name: 'list',
@@ -43,6 +68,7 @@ export default new Router({
       path: '/mv',
       name: 'mv',
       component: mv
+<<<<<<< HEAD
     },
     {
       path: '/musiclist',
@@ -73,6 +99,10 @@ export default new Router({
       path: '/danmu',
       name: 'danmu',
       component:danmu
+=======
+
+>>>>>>> 5504df7c010218784ae82701d223c297c7f17887
     }
+    
   ]
 })

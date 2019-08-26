@@ -4,7 +4,16 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import resource from 'vue-resource'
+<<<<<<< HEAD
 import VideoPlayer from 'vue-video-player'
+=======
+
+Vue.use(resource)
+
+Vue.use(resource)
+Vue.config.productionTip = false
+Vue.http.options.emulateJSON=true;
+>>>>>>> 5504df7c010218784ae82701d223c297c7f17887
 
 import {vueBaberrage} from 'vue-baberrage';
 Vue.use(vueBaberrage);

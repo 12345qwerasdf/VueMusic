@@ -260,4 +260,8 @@ h4{
 h2{
 font-weight: 300;
 }
+	
+</style>
+<style type="text/css">
+	@import url("../../static/css/ltxstyle.css");
 </style>

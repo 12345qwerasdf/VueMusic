@@ -141,5 +141,7 @@ export default {
 .s-mv-b a:hover{
 	color:#31c27c;
 }
-
+</style>
+<style type="text/css">
+	@import url("../../static/css/ltxstyle.css");
 </style>

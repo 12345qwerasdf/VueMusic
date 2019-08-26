@@ -1,12 +1,15 @@
 <template>
   <div id="app">
+<<<<<<< HEAD
     
 
   
+=======
+>>>>>>> 5504df7c010218784ae82701d223c297c7f17887
   <div class="container">
 		<div class="row clearfix">
 			<div class="col-md-12 column">
-				<nav class="navbar navbar-default navbar-inverse" role="navigation">
+				<nav style="margin-top: -10px;" class="navbar navbar-default navbar-inverse" role="navigation">
 					<div class="navbar-header">
 						 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#"><img src="../build/logo.png" style="background:cover;width: 60px;height: 40px;vertical-align: middle; margin-top: -7px;"/></a>
 					</div>
@@ -20,16 +23,21 @@
 								 <a href="/list">榜单</a>
 							</li>
 							<li style="margin-right: 20px;">
-								 <a href="/singer">歌手</a>
+
+								 <router-link to='/singerlist' >歌手</router-link>
+
 							</li>
 						
 							<li style="margin-right: 20px;">
-								 <a href="#">专辑</a>
+								 <router-link to='/allAlbum' >专辑</router-link>
 							</li>
 							<li style="margin-right: 20px;">
 								 <a href="/mv">MV</a>
 							</li>
+<<<<<<< HEAD
 							
+=======
+>>>>>>> 5504df7c010218784ae82701d223c297c7f17887
 						</ul>
 						<form class="navbar-form navbar-left" role="search">
 							<div class="form-group">
@@ -46,13 +54,19 @@
 							<li v-if="this.sessionuser.username==null" style="margin-right: 20px;">
 								 <a href="/login">登录</a>
 							</li>
+<<<<<<< HEAD
 						
+=======
+>>>>>>> 5504df7c010218784ae82701d223c297c7f17887
 						</ul>
 					</div>
 					
 				</nav>
+				<router-view/>
+				
 			</div>
 		</div>
+<<<<<<< HEAD
 		
 		<div  v-bind:class="playclass" @mouseleave="leave()">
   	  	<aplayer         	         	
@@ -70,6 +84,9 @@
       </div>
 		
 		<router-view/>
+=======
+		<!--<router-view/>-->
+>>>>>>> 5504df7c010218784ae82701d223c297c7f17887
 	</div>
   
   
@@ -213,6 +230,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 10px;
+  width: 100%;
 }
 *{
 				padding: 0;

@@ -13,8 +13,11 @@
     "hls.js": "^0.12.4",
     "vee-validate": "^2.2.15",
     "vue": "^2.5.2",
+<<<<<<< HEAD
     "vue-aplayer": "^1.6.1",
     "vue-baberrage": "^2.1.9",
+=======
+>>>>>>> 5504df7c010218784ae82701d223c297c7f17887
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.1"
   },
