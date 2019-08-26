@@ -14,7 +14,7 @@
 							<div class="playlist__item_box">
 								<div class="playlist__cover ">
 									<a href="javascript:;" >
-										<img src="../../static/img/300.jpg" class="playlist__pic">
+										<img  src="../../static/img/300.jpg" @click="musiclist(1)" class="playlist__pic">
 									</a>
 									
 								</div>
@@ -33,7 +33,7 @@
 							<div class="playlist__item_box">
 								<div class="playlist__cover ">
 									<a href="" class="js_playlist">
-										<img src="../../static/img/301.jpg" class="playlist__pic">
+										<img src="../../static/img/301.jpg" @click="musiclist(2)" class="playlist__pic">
 									</a>
 								</div>
 								<h4 class="playlist__title">
@@ -51,7 +51,7 @@
 							<div class="playlist__item_box">
 								<div class="playlist__cover ">
 									<a class="js_playlist">
-										<img src="../../static/img/302.jpg" class="playlist__pic">
+										<img src="../../static/img/302.jpg" @click="musiclist(3)" class="playlist__pic">
 									</a>
 								</div>
 								<h4 class="playlist__title">
@@ -69,7 +69,7 @@
 							<div class="playlist__item_box">
 								<div class="playlist__cover">
 									<a class="js_playlist">
-										<img src="../../static/img/303.jpg" class="playlist__pic">
+										<img src="../../static/img/303.jpg" @click="musiclist(4)" class="playlist__pic">
 									</a>
 								</div>
 								<h4 class="playlist__title">
@@ -87,12 +87,12 @@
 							<div class="playlist__item_box">
 								<div class="playlist__cover">
 									<a class="js_playlist">
-										<img src="../../static/img/304.jpg" class="playlist__pic">
+										<img src="../../static/img/400.jpg" @click="musiclist(5)" class="playlist__pic">
 									</a>
 								</div>
 								<h4 class="playlist__title">
 
-                                <span class="playlist__title_txt"><a class="js_playlist">张靓颖承包了那些影视歌曲“鱼塘”</a></span>
+                                <span class="playlist__title_txt"><a class="js_playlist">那些影视歌曲“鱼塘”</a></span>
 
                             </h4>
 								<div class="playlist__other">
@@ -146,69 +146,7 @@
 								</div>
 							</li>
 
-							<!--<li class="songlist__item">
-								<div class="songlist__item_box">
-									<a class="songlist__link">
-										<img class="songlist__pic" src="../../static/img/111.jpg">
-										<i class="mod_cover__mask"></i>
-										<i class="mod_cover__icon_play"></i>
-									</a>
-									<div class="songlist__cont">
-										<h3 class="songlist__song"><a>Thinking&#32;Out&#32;Loud&#32;</a></h3>
-										<p class="songlist__author">
-											<a class="c_tx_thin">刘宪华&#32;&#40;Henry&#41;</a>
-										</p>
-									</div>
-								</div>
-							</li>
-
-							<li class="songlist__item">
-								<div class="songlist__item_box">
-									<a class="songlist__link">
-										<img class="songlist__pic" src="../../static/img/111.jpg">
-										<i class="mod_cover__mask"></i>
-										<i class="mod_cover__icon_play"></i>
-									</a>
-									<div class="songlist__cont">
-										<h3 class="songlist__song"><a>Thinking&#32;Out&#32;Loud&#32;</a></h3>
-										<p class="songlist__author">
-											<a class="c_tx_thin">刘宪华&#32;&#40;Henry&#41;</a>
-										</p>
-									</div>
-								</div>
-							</li>
-
-							<li class="songlist__item">
-								<div class="songlist__item_box">
-									<a class="songlist__link">
-										<img class="songlist__pic" src="../../static/img/111.jpg">
-										<i class="mod_cover__mask"></i>
-										<i class="mod_cover__icon_play"></i>
-									</a>
-									<div class="songlist__cont">
-										<h3 class="songlist__song"><a>Thinking&#32;Out&#32;Loud&#32;</a></h3>
-										<p class="songlist__author">
-											<a class="c_tx_thin">刘宪华&#32;&#40;Henry&#41;</a>
-										</p>
-									</div>
-								</div>
-							</li>
-
-							<li class="songlist__item">
-								<div class="songlist__item_box">
-									<a class="songlist__link">
-										<img class="songlist__pic" src="../../static/img/111.jpg">
-										<i class="mod_cover__mask"></i>
-										<i class="mod_cover__icon_play"></i>
-									</a>
-									<div class="songlist__cont">
-										<h3 class="songlist__song"><a>Thinking&#32;Out&#32;Loud&#32;</a></h3>
-										<p class="songlist__author">
-											<a class="c_tx_thin">刘宪华&#32;&#40;Henry&#41;</a>
-										</p>
-									</div>
-								</div>
-							</li>-->
+							
 						</ul>
 					</div>
 				</div>
@@ -230,8 +168,14 @@
 					"mname":'',
      				"sname":'',
      				"mimg":'',
-     				'type':''
+     				'type':'',
+     				"mreserve2":''
      				
+				},
+				ablum:{
+					"aname":'',
+					"aimg":'',
+					"mid":''
 				}
 			}
 		},
@@ -245,6 +189,16 @@
 		  				this.FPub=result.body;
 		  				/*alert("qignqiu");
 		  				console.log(result);*/
+		  			},
+		  			function(){
+		  				alert("请求失败！");
+		  			}
+		  		)
+		  },
+		  indexlist:function(){
+		  		this.$http.get("http://localhost:8086/list/indexlist").then(
+		  			function(result){
+		  				this.ablum=result.body;	
 		  			},
 		  			function(){
 		  				alert("请求失败！");
@@ -278,6 +232,14 @@
 		  			alert("失败");
 		  		}
 		  	)
+		  },
+		  	musiclist:function(mreserve2){
+		  		this.$router.push({
+		  			path:"/musiclist",
+		  			query:{
+		  				mreserve2:mreserve2
+		  			}
+		  		})
 		  }
 
 

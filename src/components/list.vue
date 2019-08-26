@@ -96,19 +96,24 @@
 										<th>
 											时长
 										</th>
+										<th>
+											操作
+										</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr v-for="(mu,index) in music">
+									<tr v-for="(mu,index) in music" >
 										<td>{{index+1}}</td>
-										<td>{{mu.mname}}</td>
+										<td><a href="#">{{mu.mname}}</a></td>
 										<td>{{mu.singer.sname}}</td>
-										<td>{{mu.duration}}</td>
+										<td >{{mu.duration}}</td>
+										<td ><button type="button" class="btn  btn-warning" @click="download(mu.mname)">下载</button></td>
 									</tr>
 								
 								</tbody>
 							</table>
-						</div>
+							
+							</div>
 					</div>
 				
 		</div>
@@ -198,6 +203,24 @@ export default {
   			}
   		)
   	},
+  	download:function(mname){
+  		this.$http.get("http://localhost:8086/list/download",{
+  			params:{
+  				mname:mname
+  			}
+  		},{responseType: 'arraybuffer'}).then(
+  			function(){
+  				alert("下载成功");
+  				
+  			},
+  			function(){
+  			/*	alert(mid);*/
+  			}
+  		)
+  	}
+  	
+  
+  
   	
   	
   }
@@ -212,6 +235,11 @@ export default {
 a:visited{
 		text-decoration: none;
 }
+.m-center a{
+	text-decoration: none;
+	color: #2c3e50;
+}
+
 h4{
 	margin-right: 65px;
 }

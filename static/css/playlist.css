@@ -1,0 +1,271 @@
+.mod_data {
+	position: relative;
+	height: 250px;
+	padding-left: 305px;
+	margin-top: 40px;
+	margin-bottom: 35px
+}
+.data__cont {
+	padding-top: 13px
+}
+
+.data__cover {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 250px;
+	height: 250px
+}
+
+.data__photo {
+	width: 100%;
+	height: 100%;
+	object-fit: cover
+}
+
+.data__name {
+	overflow: hidden;
+	height: 50px;
+	line-height: 50px
+}
+
+.data__name_txt {
+	float: left;
+	font-size: 31px;
+	line-height: 50px;
+	font-weight: 400;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 70%;
+	margin-right: 10px
+}
+
+.data__singer {
+	/*height: 24px;*/
+	height: 50px;
+    padding-top: 30px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 90%;
+	margin-right: 680px;
+}
+.data__singer_txt {
+	font-size: 16px;
+	color: #333
+}
+
+.data__singer_line {
+	padding: 1px 4px
+}
+.data__info {
+	width: 520px;
+	padding-top: 15px
+}
+.data_info__item {
+	height: 27px;
+	line-height: 27px;
+	width: 400px;
+	/*margin-left: -152px;*/
+	padding-right: 303px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 14px
+}
+.data--edit .data_tag_box {
+	display: none
+}
+
+.detail_layout {
+	padding-right: 343px
+}
+
+.detail_layout::after {
+	content: "";
+	display: block;
+	clear: both
+}
+
+.detail_layout__main {
+	float: left;
+	width: 100%;
+	padding-bottom: 20px
+}
+
+.mod_songlist {
+	padding-bottom: 60px
+}
+
+.songlist__header {
+	background-color: #fbfbfd
+}
+
+.songlist__header_name,
+.songlist__songname {
+	width: 54%
+}
+
+.songlist__album,
+.songlist__artist,
+.songlist__header_album,
+.songlist__header_author {
+	width: 20%
+}
+@media (max-width:1240px) {
+	.songlist__header_name,
+	.songlist__songname {
+		width: 72%
+	}
+	.songlist__album,
+	.songlist__artist,
+	.songlist__header_album,
+	.songlist__header_author {
+		width: 14%
+	}
+}
+
+.mod_songlist {
+	font-size: 14px;
+	overflow: hidden
+}
+
+.songlist__list {
+	overflow: hidden;
+	clear: both
+}
+
+.songlist__header,
+.songlist__item {
+	position: relative;
+	padding-left: 46px;
+	padding-right: 95px
+}
+
+.songlist__item {
+	clear: both;
+	font-size: 0;
+	overflow: hidden
+}
+
+.songlist__item--even {
+	background-color: rgba(0, 0, 0, .01)
+}
+
+.songlist__album,
+.songlist__artist,
+.songlist__number,
+.songlist__other,
+.songlist__time {
+	line-height: 50px;
+	height: 50px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 14px
+}
+
+.songlist__songname {
+	line-height: 50px;
+	height: 50px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.songlist__header {
+	height: 50px;
+	line-height: 50px;
+	background-color: rgba(0, 0, 0, .01);
+	color: #999
+}
+
+.songlist__header_name,
+.songlist__songname {
+	float: left;
+	/*width: 47.685185%;*/
+	width: 30%;
+	position: relative;
+	white-space: normal
+}
+
+.songlist__album,
+.songlist__artist,
+.songlist__header_album,
+.songlist__header_author {
+	float: left;
+	padding-left: 15px;
+	/*width: 25.5%;*/
+	width: 30%;
+	box-sizing: border-box
+}
+
+.songlist__header_time,
+.songlist__time {
+	position: absolute;
+	top: 0;
+	right: 38px;
+	width: 50px
+}
+
+.songlist__header_other,
+.songlist__other {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 38px;
+	overflow: inherit
+}
+
+.songlist__song_txt {
+	margin-left: 10px
+}
+
+.songlist__song_txt,
+.songlist__time {
+	color: #999
+}
+
+.songlist__number {
+	position: absolute;
+	top: 0;
+	left: 10px;
+	color: #999;
+	width: 36px
+}
+
+.songlist__songname_txt {
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 56%;
+	margin-right: 8px;
+	white-space: nowrap;
+	font-size: 14px
+}
+
+.songlist__item .mod_list_menu {
+	position: absolute;
+	right: -10px;
+	right: -9999px\9;
+	top: 50%;
+	overflow: hidden;
+	opacity: 0;
+	pointer-events: none
+}
+.songlist__item--current .mod_list_menu,
+.songlist__item:hover .mod_list_menu {
+	opacity: 1;
+	pointer-events: inherit;
+	right: -10px;
+	margin-top: -18px
+}
+.list_menu__item {
+	display: inline-block;
+	margin-right: 10px;
+	vertical-align: top
+}
+.list_menu__item:hover .list_menu__icon_play {
+	background-position: -40px 0
+}

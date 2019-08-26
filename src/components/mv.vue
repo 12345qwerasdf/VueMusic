@@ -17,7 +17,7 @@
 					<div class="s-mv-b">
 						<ul>
 							<li>类型：</li>
-							<li><a>全部</a></li>
+							<li><a href="javascript:void(0);" @click="allmv">全部</a></li>
 							<li><a href="javascript:void(0);" @click="stype(mvreserve='影视')">影视</a></li>
 							<li><a href="javascript:void(0);" @click="stype(mvreserve='动漫')">动漫</a></li>
 							<li><a href="javascript:void(0);" @click="stype(mvreserve='古风')">古风</a></li>
@@ -25,7 +25,7 @@
 							<li><a >广告</a></li>
 						</ul>
 					</div>
-					<div class="s-mv-b">
+					<!--<div class="s-mv-b">
 						<ul>
 							<li>年代 ：</li>
 							<li><a>全部</a></li>
@@ -33,7 +33,7 @@
 							<li><a>2018</a></li>
 							<li><a>2017</a></li>
 						</ul>
-					</div>
+					</div>-->
 					
 					
 				</div>
@@ -42,7 +42,7 @@
 					<div class="s-mv-a"  v-for="mvv in mvs">
 						<img v-bind:src="mvv.mimg" />
 						<h6>{{mvv.mvname}}</h6>
-						<h6>2019-08-20</h6>
+						<h6>&nbsp;</h6><!--2019-08-20-->
 						<div class="over">
 							<div class="play">
 								<div class="sj"></div>
@@ -96,6 +96,7 @@ export default {
   			params:{
   				type:type
   				
+
   			}
   		}).then(
   			function(result){

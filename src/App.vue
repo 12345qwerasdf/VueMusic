@@ -1,61 +1,7 @@
 <template>
   <div id="app">
     
-    
-    
-  <!--<div  class="mainPage" > 
-    <div class="header">
-        <div class="logo">
-        	<img src="assets/logo.png" >
-        </div>
-        <div class="search_wrapper top_search">
-            <div class="search_input"><input type="text"></div>
-            <div class="search_recommend top_search_recommend">
-                
-            </div>
-            <div class="search_histroy top_search_histroy">
-               
-            </div>
-        </div>
-        <div class="topNav fr">
-            <ul>
-                <li><a target="_blank" href="#">客服中心</a></li>
-                <li><a target="_blank" href="#">招贤纳士</a></li>
-                <li><a target="_blank" href="#">会员中心 </a></li>
-            </ul>
-            <div class="login_area">
-                <div id="login_in" class="clearfix"><a class="login_btn" id="login_btn">登录</a><a target="_blank" href="" class="regin_btn" id="regin_btn">注册</a></div>
-                <div id="login_out" class="clearfix">
-                    <img class="user_img" src="">
-                    <span class="user_name">退出</span>
-                </div>
-                <div id="user_menu" class="user_menu">
-                    <div class="topArrow1"></div>
-                    <div class="topArrow2"></div>
-                    <ul>
-                        <li><a target="_blank" href="#"><span class="user_icon1"></span>个人帐号</a></li>
-                        <li><a href="#"><span class="user_icon2"></span>退出登录</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="navWrap">
-        <div class="nav">
-            <ul class="homeNav">
-                <li><a class="normal active" href="">首页</a></li>
-                <li><a class="normal"  href=" ">榜单</a></li>
-                <li><a class="normal"  id="productCenter" href="">我的音乐</a></li>
-                <li class="more" id="more"><a href="" class="iconMore" id="showMore" >更多</a>
-                </li>
-            </ul> 
-        </div>
-    </div>
-
-    
-    <router-view/>
-  </div> -->
   
   <div class="container">
 		<div class="row clearfix">
@@ -76,42 +22,14 @@
 							<li style="margin-right: 20px;">
 								 <a href="/singer">歌手</a>
 							</li>
-							<!--<li style="margin-right: 20px;">
-								 <a href="#">标签</a>
-							</li>
-							<li style="margin-right: 20px;">
-								 <a href="#">歌单</a>
-							</li>-->
+						
 							<li style="margin-right: 20px;">
 								 <a href="#">专辑</a>
 							</li>
 							<li style="margin-right: 20px;">
 								 <a href="/mv">MV</a>
 							</li>
-							<!--<li class="dropdown">
-								 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-								<ul class="dropdown-menu">
-									<li>
-										 <a href="#">Action</a>
-									</li>
-									<li>
-										 <a href="#">Another action</a>
-									</li>
-									<li>
-										 <a href="#">Something else here</a>
-									</li>
-									<li class="divider">
-									</li>
-									<li>
-										 <a href="#">Separated link</a>
-									</li>
-									<li class="divider">
-									</li>
-									<li>
-										 <a href="#">One more separated link</a>
-									</li>
-								</ul>
-							</li>-->
+							
 						</ul>
 						<form class="navbar-form navbar-left" role="search">
 							<div class="form-group">
@@ -119,35 +37,38 @@
 							</div> <button type="submit" class="btn btn-default">Submit</button>
 						</form>
 						<ul class="nav navbar-nav navbar-right">
-							
-							<li style="margin-right: 20px;">
-								 <a href="#">登录</a>
+							<li v-if="this.sessionuser.username!=null" class="active">
+									<a href="#"><span class="glyphicon glyphicon-user"></span> {{sessionuser.username}}</a>
+								</li>
+								<li v-if="this.sessionuser.username!=null">
+									<a href="javascript:void(0)" @click="logout" ><span class="glyphicon glyphicon-log-out"></span> 退出</a>
+								</li>
+							<li v-if="this.sessionuser.username==null" style="margin-right: 20px;">
+								 <a href="/login">登录</a>
 							</li>
-							<!--<li class="dropdown">
-								 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-								<ul class="dropdown-menu">
-									<li>
-										 <a href="#">Action</a>
-									</li>
-									<li>
-										 <a href="#">Another action</a>
-									</li>
-									<li>
-										 <a href="#">Something else here</a>
-									</li>
-									<li class="divider">
-									</li>
-									<li>
-										 <a href="#">Separated link</a>
-									</li>
-								</ul>
-							</li>-->
+						
 						</ul>
 					</div>
 					
 				</nav>
 			</div>
 		</div>
+		
+		<div  v-bind:class="playclass" @mouseleave="leave()">
+  	  	<aplayer         	         	
+         	                 	
+         	:music='list3[0]'
+         	show-lrc 
+        	:list='list3'
+        	listMaxHeight=200px
+         	></aplayer>
+         	
+         	
+  	  </div>
+  	  <div class="display1" @mouseenter="enter" >
+         	
+      </div>
+		
 		<router-view/>
 	</div>
   
@@ -158,8 +79,129 @@
 </template>
 
 <script>
+		import aplayer from 'vue-aplayer'
 export default {
-  name: 'App'
+
+  name: 'App',
+  components: {
+		      aplayer
+		    },
+  data() {
+    return {
+      headerShow: false,
+      sessionuser: {  id:'',
+					username: '',
+						
+				},
+				   music:{
+		      	mid:0,
+		      	title:'',
+		      	artist:'',
+		      	src:'',
+		      	pic:'',
+		      	lrc:''
+      		},
+       		playclass:'music-aplay1',
+       	 	music3: null,
+        	list3: [
+          {
+            title: '梦回还',
+            artist: '呦猫UNEKO',
+            src: 'http://localhost:8086/music/呦猫UNEKO - 梦回还.mp3',
+            pic: 'http://localhost:8086/img/梦回还.jpg',
+            lrc: 'http://localhost:8086/lrc/梦回还.lrc',
+          },
+          {
+            title: '想太多',
+            artist: '李玖哲',
+            src: 'http://localhost:8080/static/music/李玖哲 - 想太多.mp3',
+            pic: 'http://localhost:8080/static/img/梦回还.jpg',
+            lrc: 'http://localhost:8080/static/lrc/梦回还.lrc',
+          },
+          {
+            title: 'βios',
+            artist: '小林未郁',
+            src: 'http://localhost:8080/static/music/小林未郁 - βios.mp3',
+            pic: 'http://localhost:8080/static/img/梦回还.jpg',
+            lrc: 'http://localhost:8080/static/lrc/梦回还.lrc',
+          },
+          {
+            title: '少年情',
+            artist: '心然',
+            src: 'http://localhost:8080/static/music/心然 - 命起涟漪·少年情.mp3',
+            pic: 'http://localhost:8080/static/img/梦回还.jpg',
+            lrc: 'http://localhost:8080/static/lrc/梦回还.lrc',
+          }
+        ]
+        }
+   
+   
+  },
+  created:function(){
+  	this.getSessionUser();
+  },
+  watch: {
+		// 方法1
+		'$route' (to, from) { //监听路由是否变化
+			// console.log(999)
+			if(to.path == "/index"){ //跳转到哪个页面
+				location.reload()
+			}
+		},
+	},
+  methods:{
+  	getSessionUser:function(){
+  		this.$http.get('http://localhost:8086/getsessionuser').then(function(res){
+  			this.sessionuser.id=res.body.id;
+  			this.sessionuser.username=res.body.username;
+  		},function(error){
+  			console.log(error)
+  		})
+  	},
+  	logout: function() {
+				this.$http.get('http://localhost:8086/logout').then(function(res) {
+					if(res.bodyText == 'success') {
+					alert('成功退出');
+					
+					this.sessionuser.id = "";
+					this.sessionuser.username = "";
+					
+					this.$router.go(0);
+					this.$router.push("/index");
+					
+						
+					}
+				}, function(error) {
+					alert("请求失败");
+				})
+			},
+			enter:function(){
+     		this.playclass='music-aplay2'
+     	},
+     	leave:function(){
+     		this.playclass='music-aplay1'
+     	},
+     	playmusic:function(mname){
+	  		this.$http.get("http://127.0.0.1:8086/playmusic",{
+	  			params:{
+	  				mname:mname
+	  			}
+	  		}).
+	  		then(function(result){
+	  			this.music.title=result.body.mname;
+	  			this.music.artist=result.body.singer.sname;
+	  			this.music.src=result.body.location;
+	  			this.music.pic=result.body.mimg;
+	  			this.music.lrc=result.body.mreserve1;
+	  			this.list3.push(this.music)
+	  		
+	  			console.log(this.music)
+	   		},function(){
+	   			alert("添加失败");
+	   		})
+	  		}
+  	
+  },
 }
 </script>
 
@@ -172,4 +214,52 @@ export default {
   color: #2c3e50;
   margin-top: 10px;
 }
+*{
+				padding: 0;
+				margin: 0;
+		}
+		
+		.display1{
+			width: 100%;
+			height: 5px;
+			position: fixed;
+			top: 6px;
+			
+		}
+  .music-aplay1{
+  		width: 80%;
+			height: 300px;
+			
+			margin: 80px auto;			
+			overflow: hidden;		
+			position:fixed;
+			top:-80px;
+			left:150px;
+			display: none;
+  }
+  .music-aplay2{
+  		width: 80%;
+			height: 300px;			
+			margin: 80px auto;			
+			overflow: hidden;		
+			position:fixed;
+			top:-80px;
+			left:150px;
+  }
+ 
+  .aplayer-list {   
+    opacity:0.7
+	}
+	.aplayer-body{
+		opacity:0.7
+	}
+	.playtest{
+		width: 100px;
+		height: 100px;	
+		margin: auto;
+	}
+/*<link rel="stylesheet" type="text/css" href="static/bootstrap-3.3.7/css/bootstrap.css"/>
+   	<script src="static/js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+   	<script src="static/bootstrap-3.3.7/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>*/
+   /*	@import url("../static/bootstrap-3.3.7/css/bootstrap.css");*/
 </style>

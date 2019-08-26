@@ -115,7 +115,7 @@ hr{
 	float: left;
 	font-size: 30px;
 	padding: 2px 3px;
-	/*color: white;*/
+	
 }
 .s-list a:hover{
 	color: orange;
@@ -126,7 +126,7 @@ hr{
 .s-img{
 	width: 78%;
 	height: 450px;
-	/*background: blue;*/
+	
 	float: right;
 }
 .s-img-a {
@@ -139,7 +139,7 @@ hr{
 .s-img-a h4{
 	height: 20px;
 	margin: auto;
-	/*margin-left: 50px;*/
+	
 	margin-top: 15px;
 }
 .s-img-a img{
@@ -164,7 +164,8 @@ hr{
 }
 .s-mv-top{
 	width: 95%;
-	height: 160px;
+	/*height: 160px;*/
+	height: 130px;
 	background-color: white;
 	/*background-color: ghostwhite;*/
 	margin: auto;
